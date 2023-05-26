@@ -1,0 +1,31 @@
+Cart APIs - 
+5. `POST /cart/add/<int:product_id>`
+   - Description: Add a product to the cart
+   - Request body: None
+   - Response:
+     - JSON object with a success message if the product is added successfully
+     - JSON object with an error message if the product does not exist or is already in the cart
+
+6. `GET /cart`
+   - Description: View the cart
+   - Response:
+     - JSON object with the cart items and the total price if the cart is not empty
+     - JSON object with a message indicating that the cart is empty if the cart is empty
+
+7. `DELETE /cart`
+   - Description: Clear the cart
+   - Response: JSON object with a success message
+
+
+   Task 24th May
+   from pymongo import MongoClient
+# set up the mongo configurations
+# setting up the connection
+# setting up the DB
+# Setting up the Models/Objects
+# update the opearations in my functions
+client = MongoClient('mongodb://localhost:27017/')
+db = client['ecommerce']
+products_collection = db['products']
+orders_collection = db['orders']
+cart_collection = db['carts']
